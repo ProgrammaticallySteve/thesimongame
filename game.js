@@ -2,30 +2,32 @@
 var buttonColours = ["red", "blue", "green", "yellow"];
 
 var gamePattern = [];
-
 var userClickedPattern = [];
 
 $(".btn").click(function() {
 
-var userChosenColour = $(this).attr("id");
-userClickedPattern.push(userChosenColour);
+  var userChosenColour = $(this).attr("id");
+  userClickedPattern.push(userChosenColour);
 
-playSound(userChosenColour);
+  playSound(userChosenColour);
 
 });
 
-function nextSequence () {
+function nextSequence() {
 
   var randomNumber = Math.floor(Math.random() * 4);
-
   var randomChosenColour = buttonColours[randomNumber];
-
   gamePattern.push(randomChosenColour);
 
 $("#" + randomChosenColour).fadeIn(100).fadeOut(100).fadeIn(100);
-
 playSound(userChosenColour);
+}
 
+function animatePress(currentColor) {
+  $("#" + currentColor).addClass("pressed");
+  setTimeout(function () {
+    $("#" + currentColor).removeClass("pressed");
+  }, 100);
 }
 
 function playSound(name) {

@@ -10,6 +10,14 @@ body {
   color: #FEF2BF;
 }
 
+#instructions {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 1rem;
+  margin:  5%;
+  line-height: 2rem;
+  color: #FEF2BF;
+}
+
 .container {
   display: block;
   width: 50%;
